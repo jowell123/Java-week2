@@ -1,43 +1,68 @@
 public class Movie
 {
-    int movieRank;
-    String title;
-    String director;
-    int score;
-    public Movie(int movieRank, String title, String director, int score) {
+        int movieRank;
+        String title;
+        String director;
+        int score;
+  
+  
+     public Movie(int movieRank, String title, String director, int score)
+     {
         this.movieRank = movieRank;
         this.title = title;
         this.director = director;
         this.score = score;
-    }
-    public int getMovieRank() {
+     }//constructor
+  
+     public int getMovieRank()
+     {
         return movieRank;
-    }
-    public String getTitle() {
+     }
+  
+     public void setMovieRank(int movieRank)
+     {
+        this.movieRank = movieRank;
+     }
+  
+     public String getTitle()
+     {
         return title;
-    }
-    public String getDirector() {
+     }
+  
+     public void setTitle(String title)
+     {
+        this.title = title;
+     }
+  
+     public String getDirector()
+     {
         return director;
-    }
-    public int getScore() {
+     }
+  
+     public void setDirector(String director)
+     {
+        this.director = director;
+     }
+  
+     public int getScore()
+     {
         return score;
-    }
-    @Override
-    public String toString() {
-        return "Movie [director=" + director + ", movieRank=" + movieRank + ", score=" + score + ", title=" + title
-                + "]";
-
-                        String response = scanner.nextLine();
-        Integer selectedMovie = Integer.parseInt(response);
-
-        for(Movie movie:movieList){
-            if(movie.rank == selectedMovie){
-                System.out.println("You selected >>> " + movie.title + " by " + movie.director);
-            }
-    }
-   
-    
-
-
+     }
+  
+     public void setScore(int score)
+     {
+        this.score = score;
+     }
+  
+     @Override
+     public String toString()
+     {
+        return "\nMovie:\n" +
+                "Rank = " + movieRank +
+                ", \ntitle = " + title +
+                ", \ndirector = " + director +
+                ", \nscore=" + score;
+  
+     }//toString
 
 }//class

@@ -2,39 +2,38 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args)
+   {
+      Scanner keyboard = new Scanner(System.in);
+       ArrayList<Movie> movieList = new ArrayList();
 
-        Scanner keyboard = new Scanner(System.in);
-       
-        int rank;
+       int rank;
 
-        ArrayList<Movie> movie = new ArrayList<Movie>();
+       movieList.add(new Movie(1, "Silly Film", "Steve",100));
+       movieList.add(new Movie(2, "Jurassic Park", "Jim", 99));
+       movieList.add(new Movie(3, "Minions", "Gru", 98));
 
-        movie.add(new Movie(1, "MARCEL THE SHELL WITH SHOES ON", "Dean Fleischer-Camp", 100));
-        movie.add(new Movie(2, "FIRE OF LOVE", "Sara Dosa", 100));
-        movie.add(new Movie(3, "PLAYGROUND", "Laura Wandel", 100));
-        movie.add(new Movie(4, "WRITING WITH FIRE", "Rintu Thomas", 100));
-        movie.add(new Movie(5, "THE JANES", "Tia Lessin", 100));
-        movie.add(new Movie(6, "HAPPENING", "Audrey Diwan", 99));
-        movie.add(new Movie(7, "NAVALNY", "Daniel Roher", 99));
-        movie.add(new Movie(8, "POLY STYRENE: I AM A CLICHÉ", "Celeste Bell", 98));
-        movie.add(new Movie(9, "THE AUTOMAT", "Lisa Hurwitz", 98));
-        movie.add(new Movie(10, "WHO WE ARE: A CHRONICLE OF RACISM IN AMERICA", "Emily Kunstler", 98));
+       System.out.println("Please enter the rank of the movie:");
+       rank = keyboard.nextInt();
+       keyboard.nextLine();
 
-        System.out.println("Hey movie-goer, what position of movie would you like to find out about?");
-        rank = keyboard.nextInt();
-        keyboard.nextLine();
+       Movie answer = null;
 
-        Movie movie1 = movie.get(rank + 1);
+      for(Movie query1:movieList)
+      {
+         if (query1.getMovieRank() == rank)
+         {
+            System.out.println(query1);
+         }
 
-        System.out.println(movie1.toString());
+         for(Movie query2:movieList)
+         {
+            if (query2.getTitle().equals("Silly Film"))
+               System.out.println(query2);
+         }
 
-        /*String response = scanner.nextLine();
-        Integer selectedMovie = Integer.parseInt(response);
+      }
 
-        for(Movie movie:movieList){
-            if(movie.rank == selectedMovie){
-                System.out.println("You selected >>> " + movie.title + " by " + movie.director);
-            }*/
-    }
+
+   }//main 
 }
