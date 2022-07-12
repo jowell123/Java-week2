@@ -19,11 +19,12 @@ public class App
         Scanner keyboard = new Scanner(System.in);
        ArrayList<Customer> customerList = getAllCustomers();
 
-       System.out.println("Please enter the customerID:");
-       String customerIDInput = keyboard.nextLine();
-       Customer cus1 = new Customer(customerIDInput);
-       cus1.getCustomerID();
-       System.out.println(cus1);
+       System.out.println("Please enter a customer number:");
+       int cusNo = keyboard.nextInt();
+       keyboard.nextLine();
+
+       System.out.println(customerList.get(cusNo-1));
+       
     }
 
     private static ArrayList<Customer> getAllCustomers(){

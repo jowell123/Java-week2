@@ -120,7 +120,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer [customerID=" + customerID + "| companyName=" + companyName + "]";
+        return "\nCustomer: \ncustomerID = " + customerID + "\nCompanyName = " + companyName;
     }
 
         
